@@ -1,5 +1,7 @@
 # RectanglesRSA
 
+%generation of polygons here polygons with 10 sides tracking successful and total attempts at placing polygons 
+
 clear;close all;
 L=[1];
 a=0.5;
@@ -97,3 +99,13 @@ function [inradius, circumradius] = polygon_radii(n, s)
     inradius = circumradius * cos(pi/n);
 end
 
+%showing polygons
+hold
+  for i=1:length(V(:,1))
+   pgon1=nsidedpoly(Side,'Center',[V(i,2),V(i,3)],'SideLength',a);
+
+    plot(pgon1 ,  'HoleEdgeColor',[0 0 0],...
+    'EdgeColor',[0 0 0],...
+    'FaceColor',[0 0 1],...
+    'FaceAlpha',0.85);
+  end
